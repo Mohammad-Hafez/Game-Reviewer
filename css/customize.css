@@ -1,0 +1,247 @@
+@font-face {
+    font-family: shantell;
+    src: url(../fonts/static/ShantellSans-Light.ttf);
+}
+
+@font-face {
+    font-family: shantell-Bold;
+    src: url(../fonts/static/ShantellSans-Regular.ttf);
+}
+
+@media screen and (max-width:990px) {
+    html {
+        font-size: 65%;
+    }
+
+    @media screen and (max-width:1250px) {
+        html {
+            font-size: 75%;
+        }
+    }
+}
+
+:root {
+    --main-color: #272b30;
+    --seconde-color: #32383e;
+    --color-text: #fff;
+    --btn-main-color: #272729;
+    --blue-color: #09c;
+}
+
+::-webkit-scrollbar {
+    width: 0.625rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--seconde-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 50px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 0.5) inset;
+}
+
+body {
+    background-color: var(--main-color);
+    font-family: "shantell-Bold";
+    color: white;
+}
+/* *REVIEW - HEADER & NAV STYLING */
+.imgcontainer {
+    background-image: url(../img/wraper.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 200px;
+    margin-bottom: -25px;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    align-self: end;
+    width: 70%;
+    margin-inline: auto;
+    background-color: #3A497B;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 70%);
+    z-index: 1;
+}
+
+@media screen and (max-width:1200px) {
+    .imgcontainer{
+        margin-bottom: -20px;
+    }
+    .navbar {
+        width: 90%;
+    }
+}
+
+.nav-item a {
+    color: white;
+    transition: all .5s;
+    text-transform: uppercase;
+}
+
+.nav-item a:hover {
+    color: var(--blue-color);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--blue-color);
+}
+
+.nav-link:focus {
+    color: white;
+}
+
+.nav-logo img {
+    max-width: 40px;
+    margin-right: 10px;
+}
+
+.nav-logo h5 {
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+/* *SECTION - GAME CARD STYLE */
+#games .container .row .gameItem .innerGameCard {
+    border: 2px solid rgba(0, 0, 0, 0.175);
+    position: relative;
+    cursor: pointer;
+    filter: grayscale(0.7);
+    transition: transform 0.5s, filter 0.5s 0.1s;
+}
+
+.gameFooter {
+    border-top: 2px solid rgba(0, 0, 0, 0.175);
+    margin-top: auto;
+}
+
+#games .container .row .gameItem .innerGameCard:hover {
+    transform: scale(1.05);
+    filter: grayscale(0);
+}
+
+#games .container .row .gameItem .innerGameCard .gameFooter span {
+    background-color: var(--seconde-color);
+}
+/* *NOTE - GAME DETAILS STYLE */
+#gameDetails {
+    position: absolute;
+    inset: 0;
+    z-index: 9999;
+    background-color: var(--main-color);
+}
+
+#gameDetails span {
+    background-color: var(--blue-color);
+    font-size: .8rem;
+    padding: 5px;
+    border-radius: 10px;
+    color: var(--btn-main-color);
+}
+
+#gameDetails #closebtn {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+/* *SECTION - LOADER PAGE STYLE */
+#loaderSec {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    color: #fff;
+}
+
+.loader:before,
+.loader:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transform: rotateX(70deg);
+    animation: 1s spin linear infinite;
+}
+
+.loader:after {
+    color: #FF3D00;
+    transform: rotateY(70deg);
+    animation-delay: .4s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+}
+
+@keyframes rotateccw {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes spin {
+
+    0%,
+    100% {
+        box-shadow: .2em 0px 0 0px currentcolor;
+    }
+
+    12% {
+        box-shadow: .2em .2em 0 0 currentcolor;
+    }
+
+    25% {
+        box-shadow: 0 .2em 0 0px currentcolor;
+    }
+
+    37% {
+        box-shadow: -.2em .2em 0 0 currentcolor;
+    }
+
+    50% {
+        box-shadow: -.2em 0 0 0 currentcolor;
+    }
+
+    62% {
+        box-shadow: -.2em -.2em 0 0 currentcolor;
+    }
+
+    75% {
+        box-shadow: 0px -.2em 0 0 currentcolor;
+    }
+
+    87% {
+        box-shadow: .2em -.2em 0 0 currentcolor;
+    }
+}
